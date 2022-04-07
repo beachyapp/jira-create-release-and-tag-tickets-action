@@ -54630,14 +54630,13 @@ try {
   issueKeys = [...new Set(issueKeys)];
 
   getIssues(issueKeys).then(async issues => {
-    // await setVersion(issues[0].fields.project.id);
-    console.log(issues);
-    // await updateIssuesWithFixVersion(issues);
-    // await createReleaseNote(issues).then(releaseNotes => {
-    //   releaseNotes = releaseNotes.replace(/"/g, '\\\"').replace(/'/g, "`");
-    //   console.info(releaseNotes);
-    //   core.setOutput("notes", releaseNotes);
-    // });
+    await setVersion(issues[0].fields.project.id);
+    await updateIssuesWithFixVersion(issues);
+    await createReleaseNote(issues).then(releaseNotes => {
+      releaseNotes = releaseNotes.replace(/"/g, '\\\"').replace(/'/g, "`");
+      console.info(releaseNotes);
+      core.setOutput("notes", releaseNotes);
+    });
   });
 
 } catch (error) {
