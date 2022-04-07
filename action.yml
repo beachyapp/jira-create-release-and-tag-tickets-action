@@ -1,0 +1,33 @@
+name: 'Create new version and tag all tickets'
+description: 'This action creates a new version in JIRA, and tags all the issues in with the new version by issue keys'
+inputs:
+  tag:
+    description: 'The new fix version tag in JIRA'
+    required: true
+    default: ''
+  description:
+    description: 'Description of the new fix version'
+    required: false
+    default: ''
+  issue-keys:
+    description: 'JIRA issue keys to tag with the new fix version'
+    required: true
+    default: ''
+  jira-user-email:
+    description: 'JIRA user email'
+    required: true
+    default: ''
+  jira-api-token:
+    description: 'JIRA API token'
+    required: true
+    default: ''
+  jira-base-url:
+    description: 'JIRA base URL'
+    required: true
+    default: ''
+outputs:
+  notes:
+    description: 'Release notes (similar to JIRA release notes)'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
