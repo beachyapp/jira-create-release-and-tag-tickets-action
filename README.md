@@ -44,7 +44,7 @@ Release notes grouped by issue status (similar to JIRA release notes)
   ....
 - name: Create JIRA fix version and tag issue tickets
   id: jira-version
-  uses: beachyapp/create-release-and-tag-tickets-action@v0.1
+  uses: beachyapp/jira-create-release-and-tag-tickets-action@v0.1
   with:
     tag: "v1.0.1"
     description: Created by ${{ github.actor }}
