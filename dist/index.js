@@ -54617,10 +54617,10 @@ try {
     for (var key in releaseNoteMap) {
       releaseNote.push("");
       releaseNote.push(`### ${key.toUpperCase()}`);
-      releaseNote.push(releaseNoteMap[key].join("\\n"));
+      releaseNote.push(releaseNoteMap[key].join("\n"));
     }
     releaseNote.push("");
-    return releaseNote.join("\\n");
+    return releaseNote.join("\n");
   }
 
   if(!issueKeys || issueKeys.length == 0)
