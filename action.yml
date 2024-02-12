@@ -29,5 +29,5 @@ outputs:
   notes:
     description: 'Release notes (similar to JIRA release notes)'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
